@@ -1,0 +1,383 @@
+/* Resetter */
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+/*colors*/
+
+/* html {
+  --color-primary1: #fff;
+  --color-primary2: #e7e4e4;
+  --color-primary3: #15032c;
+
+  --color-secondary: #348c99;
+
+  --color-accent1: #ffc400;
+  --color-accent2: #bf0d40;
+} */
+
+/*animation*/
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  position: relative;
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+html {
+  --color-nav: #15032c;
+  --color-nav-link: #fff;
+  --color-header: #fff;
+  --color-highlight1: #e7e4e4;
+  --color-product: #fff;
+  --color-highlight2: #15032c;
+  --color-hightlight2-paragraph: #fff;
+  --color-request: #fff;
+  --color-input: #fff;
+  --color-footer: #e7e4e4;
+
+  --color-text: #15032c;
+  --color-text2: #fff;
+  --color-paragraph: #15032c;
+
+  --color-graphics: #348c99;
+
+  --color-accent1: #ffc400;
+  --color-accent2: #bf0d40;
+}
+
+html[data-theme="dark"] {
+  --color-nav: #15032c;
+  --color-nav-link: #fff;
+  --color-nav-button: #fff;
+  --color-header: #29394a; /*#426e7c*/
+  --color-highlight1: #15032c;
+  --color-product: #29394a;
+  --color-highlight2: #15032c;
+  --color-hightlight2-paragraph: #fff;
+  --color-request: #29394a;
+  --color-input: #fff;
+  --color-footer: #15032c;
+
+  --color-text: #fff;
+  --color-text2: #15032c;
+  --color-paragraph: #fff;
+
+  --color-graphics: #b3c0c4;
+
+  --color-accent1: #bf0d40;
+  --color-accent2: #ffc400;
+}
+
+/*toggle button*/
+input[type="checkbox"] {
+  /* styling for input element */
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  /* styling for labels */
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: #bf0d40;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  /* styling for labels - on toggle */
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  /* conditional check while toggling */
+  background: #b3c0c4;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+
+/* Fonts */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+  font-family: "Noto Serif Display", serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 1.953rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  color: var(--color-paragraph);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent2);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* UI Elements */
+button {
+  display: inline-block;
+  height: 3rem;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-accent2);
+  color: var(--color-text2);
+}
+
+.dark_button {
+  background-color: var(--color-accent2);
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: 250px;
+  height: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: var(--color-input);
+  border-color: var(--color-input);
+  color: var(--color-text);
+}
+
+/* Menu */
+nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-nav);
+}
+
+nav a {
+  color: var(--color-nav-link);
+  text-decoration: none;
+}
+
+nav a.logo {
+  font-family: "Noto Serif Display", serif;
+  font-size: 1.25rem;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0px 1rem;
+}
+
+nav > button {
+  background-color: var(--color-accent1);
+  color: var(--color-nav-button);
+}
+
+/* Header */
+header {
+  display: flex;
+  min-height: 80vh;
+  padding: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--color-header);
+}
+
+header h1 {
+  color: var(--color-text);
+}
+
+header p {
+  color: var(--color-text);
+}
+
+.toggle-container label {
+  color: var(--color-nav-link);
+}
+
+header button {
+  margin-bottom: 5rem;
+}
+
+.header_text {
+  width: 30vw;
+  min-width: 300px;
+}
+
+.header_graphics {
+  width: 30vw;
+  height: 30vw;
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 300px;
+  background-color: var(--color-graphics);
+}
+
+/* product section */
+#product {
+  padding: 2rem;
+  background-color: var(--color-product);
+}
+
+#product h3 {
+  font-size: 1.953rem;
+  line-height: 2.5rem;
+}
+
+#product article {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product_text {
+  width: 50vw;
+  min-width: 300px;
+}
+
+.product_graphics {
+  width: 15vw;
+  height: 15vw;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 3rem;
+  background-color: var(--color-graphics);
+  border-radius: 300px;
+}
+
+/* highlight sections */
+.highlight {
+  display: flex;
+  min-height: 70vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-highlight1);
+}
+
+.highlight div {
+  width: 80vw;
+}
+
+.highlight div h2 {
+  font-size: 3.052rem;
+  line-height: 4rem;
+}
+
+.dark {
+  background-color: var(--color-highlight2);
+}
+
+.dark h2 {
+  color: var(--color-hightlight2-paragraph);
+}
+
+.dark a {
+  color: var(--color-accent1);
+}
+
+/* request section */
+#request {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-request);
+}
+
+#request div {
+  width: 50vw;
+  min-width: 450px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  padding: 5vh 2rem;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--color-footer);
+}
+
+footer h2,
+footer h3 {
+  color: var(--color-text);
+}
+
+footer a {
+  color: var(--color-accent2);
+}
+
+footer section.left {
+  display: flex;
+  max-width: 50vw;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer section div {
+  margin: 0px 1rem 1rem 1rem;
+}
