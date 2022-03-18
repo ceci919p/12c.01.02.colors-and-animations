@@ -174,7 +174,7 @@ a:hover {
 /* UI Elements */
 button {
   display: inline-block;
-  height: 3rem;
+  /*   height: 3rem; */
   padding: 1rem 2rem;
   border: none;
   font-size: 1rem;
@@ -207,6 +207,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-nav);
+  gap: 1rem;
 }
 
 nav a {
@@ -227,6 +228,7 @@ nav li {
 nav > button {
   background-color: var(--color-accent1);
   color: var(--color-nav-button);
+  padding: 1rem;
 }
 
 /* Header */
@@ -368,6 +370,10 @@ footer h3 {
 
 footer a {
   color: var(--color-accent2);
+}
+
+footer section {
+  margin-bottom: 1rem;
 }
 
 footer section.left {
